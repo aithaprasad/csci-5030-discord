@@ -1,7 +1,7 @@
 # ScrumNCoke
 
-Customer :
+**Customer** : Organizations looking for empowering them by means of quality software , flexibility and transparency in working software project are open for collaboration
 
-Our Principle : Technical team of motivated individuals must meet daily throughout the project, delivering working software to the customer at regualar intervals
+**Our Principle** : Technical team of motivated individuals must meet daily throughout the project, delivering working software to the customer at regular intervals
 
-[link](https://github.com/thegoldenmule/csci-5030/blob/main/notes/briefs/discord.md)
+[**link**](https://github.com/thegoldenmule/csci-5030/blob/main/notes/briefs/discord.md)
