@@ -1,4 +1,4 @@
-#Sprint Review
+# Sprint Review
  - We chose react js for the front end, node js for the backend, and MongoDB for the database, and we started with React js and node js, then moved on to express in node js, and finally to the integration section, where we successfully linked the browser to the server and the server to the database. The page-count handler was designed to show the number of page loads in the UI/browser.
  - We need to improve the code's efficiency, and we've been ignoring the comments in the code; we need to include more comments to demonstrate how the code works. We must additionally concentrate on the annotated tags.
  - We are happy with our work because we were able to meet the output requirements for sprint 1. We'll focus more on the areas where we slipped and overlooked, and we'll undoubtedly improve in the next sprint.
