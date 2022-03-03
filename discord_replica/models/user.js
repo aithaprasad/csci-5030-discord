@@ -17,6 +17,9 @@ const userSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  token: {
+    type: String,
+  }
 });
 
 mongoose.model("User", userSchema);
