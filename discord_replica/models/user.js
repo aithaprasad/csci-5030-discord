@@ -13,13 +13,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  resetToken: String,
+  expireToken: Date,
   count: {
     type: Number,
     default: 0,
   },
-  token: {
-    type: String,
-  }
 });
 
 mongoose.model("User", userSchema);
