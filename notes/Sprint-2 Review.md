@@ -7,7 +7,7 @@ We've updated our website with the following new features, as per our sprint pla
 2) The user can sign in to their account using the same credentials they used to create it.
 3) The user can also use the forgot password feature to reset his password.
 
-2 . What has slipped?
+2. What has slipped?
 
 We have raised the pull requests a little late, but other than that, we completed what we set out
 to do until this week and are happy with the outcomes.
