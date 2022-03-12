@@ -7,7 +7,7 @@
   4) Almost equal contribution from each of us
 
   **What should we stop doing ?**
-  1) Committing the PR's late.
+  1) Raising the PR's late.
 
   **What should we start doing ?**
   1) Start following good(similar) code practices(variable names, function Names, new line at end of file)
