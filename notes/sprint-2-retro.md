@@ -1,12 +1,12 @@
 # Sprint Retrospective:
-**
-  What should we keep doing ?**
+
+  **What should we keep doing ?**
   1) Team discussions which were short and precise
   2) Peer to Peer to help when necessary and share thoughts for new ideas
   3) Continuous commits from the team
   4) Almost equal contribution from each of us
 
- ** What should we stop doing ?**
+  **What should we stop doing ?**
   1) Committing the PR's late.
 
   **What should we start doing ?**
