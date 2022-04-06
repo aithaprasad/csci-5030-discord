@@ -161,4 +161,74 @@ router.post("/new-password", (req, res) => {
     });
 });
 
+router.post("/new/channel", (req, res) => {
+  const dbData = req.body;
+  User.create(dbData, (err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(201).send(data);
+    }
+  });
+});
+
+router.get("/get/channelList", (req, res) => {
+  User.find((err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      let channels = [];
+      data.map((channelData) => {
+        const channelInfo = {
+          id: channelData._id,
+          channelName: channelData.channelName,
+        };
+        channels.push(channelInfo);
+      });
+      res.status(200).send(channels);
+    }
+  });
+});
+
+router.post("/new/message", (req, res) => {
+  //const id = req.query.id
+  const newMessage = req.body;
+
+  User.updateOne(
+    { _id: req.query.id },
+    { $push: { conversation: req.body } },
+    (err, data) => {
+      if (err) {
+        console.log("Error when saving the msg");
+        console.log(err);
+        res.status(500).send(err);
+      } else {
+        res.status(201).send(data);
+      }
+    }
+  );
+});
+
+router.get("/get/data", (req, res) => {
+  User.find((err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(data);
+    }
+  });
+});
+
+router.get("/get/conversation", (req, res) => {
+  const id = req.query.id;
+
+  User.find({ _id: id }, (err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(data);
+    }
+  });
+});
+
 module.exports = router;
