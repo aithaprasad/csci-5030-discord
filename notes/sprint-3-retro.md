@@ -1,4 +1,4 @@
-# Sprint Retrospective
+# Sprint Retrospective:
 
 ## What should we keep doing ?
 * Short meetings to estimate the progress of the project and make necessary modifications to the plan.
@@ -11,4 +11,4 @@
 
 ## What should we start doing ?
 * Improving the code for better user experience in the next stages of project coding.
-* Examine the functionality and user interface of a few well-known chat programs and try to replicate them.
+* Look for ways to improve the functionality and user experience by examining a few well-known chat apps.
