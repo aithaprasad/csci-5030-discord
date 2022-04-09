@@ -1,5 +1,4 @@
 What is done?
-We've added the following new features to our website as part of our sprint strategy.
 1. The homepage has been designed to display the user's channels, chats, and username
 of the user.
 2. We've modified the homepage with a text area where registered users can input
