@@ -9,3 +9,13 @@
 **Trello Board** : [**ScrumNCoke board**](https://trello.com/b/G2lmDv6d/scrumncoke)
 
 **Project** : [**Real time chat application**](https://github.com/thegoldenmule/csci-5030/blob/main/notes/briefs/discord.md) 
+
+**Running the Unit Tests:**
+
+1) Install Jest and Enzyme  
+i) npm install jest   
+ii) npm install Enzyme enzyme-adapter<React-version>  
+  
+2) Add "test" in Scripts of package.json file
+  
+3) Run npm test 
