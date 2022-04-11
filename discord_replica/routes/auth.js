@@ -43,7 +43,8 @@ router.get("/protected", requireLogin, (req, res) => {
 router.post("/signup", (req, res) => {
   console.log(req.body.name);
   const { name, email, password } = req.body;
-  if (!email || !password || !name) {
+  verifyBody = checkEmptyFields(req.body);
+  if (verifyBody != "All good") {
     return res.status(422).json({ error: "please add all the fields" });
   }
   User.findOne({
