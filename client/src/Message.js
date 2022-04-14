@@ -1,4 +1,3 @@
-//import { Avatar } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import "../Message.css";
 
@@ -13,13 +12,15 @@ function Message({ timestamp, message, user }) {
   return (
     <div className="message">
       <div className="message__info">
-        <h4>
+        <h5>
           {userName}
           <span className="message__timestamp">
-            {new Date(parseInt(timestamp)).toDateString()}
+            {new Date(parseInt(timestamp)).toDateString()}{" "}
+            {new Date(parseInt(timestamp)).getHours()}
+            {":"}
+            {new Date(parseInt(timestamp)).getMinutes()}
           </span>
-        </h4>
-
+        </h5>
         <p>{message}</p>
       </div>
     </div>
