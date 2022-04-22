@@ -6,17 +6,15 @@ import CardGiftcardIcon from "@material-ui/icons/CardGiftcard";
 import GifIcon from "@material-ui/icons/Gif";
 import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
 import Message from "./Message";
-//import { useSelector } from "react-redux";
-//import { selectChannelId, selectChannelName } from "./features/appSlice";
-//import { selectUser } from "./features/userSlice";
-//import db from "./firebase";
-//import firebase from "firebase";
+import { useSelector } from "react-redux";
+import { selectChannelId, selectChannelName } from "./features/appSlice";
+import { selectUser } from "./features/userSlice";
 import axios from "./Axios";
 
 function Chat() {
-  //const user = useSelector(selectUser);
-  const channelId = "624cf6f15287631ca4800491"; //useSelector(selectChannelId);
-  const channelName = "Youtube"; //useSelector(selectChannelName);
+  const user = useSelector(selectUser);
+  const channelId = useSelector(selectChannelId);
+  const channelName = useSelector(selectChannelName);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
 
