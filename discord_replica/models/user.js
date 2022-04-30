@@ -34,21 +34,4 @@ const userSchema = new mongoose.Schema({
   ],
 });
 
-/*
-const userSchema = new mongoose.Schema({
-  channelName: String,
-  conversation: [
-    {
-      messages: String,
-      timestamp: String,
-      user: {
-        displayName: String,
-        email: String,
-        photo: String,
-        uid: String,
-      },
-    },
-  ],
-});
-*/
 mongoose.model("User", userSchema);
