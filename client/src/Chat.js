@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../Chat.css";
 import ChatHeader from "./ChatHeader";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
@@ -6,19 +6,24 @@ import CardGiftcardIcon from "@material-ui/icons/CardGiftcard";
 import GifIcon from "@material-ui/icons/Gif";
 import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
 import Message from "./Message";
-//import { useSelector } from "react-redux";
-//import { selectChannelId, selectChannelName } from "./features/appSlice";
-//import { selectUser } from "./features/userSlice";
-//import db from "./firebase";
-//import firebase from "firebase";
+import { useSelector } from "react-redux";
+import { selectChannelId, selectChannelName } from "./features/appSlice";
+import { selectUser } from "./features/userSlice";
 import axios from "./Axios";
+import { sendDirectMessage } from "../../realtimeCommunication/socketConnection";
 
 function Chat() {
-  //const user = useSelector(selectUser);
-  const channelId = "624cf6f15287631ca4800491"; //useSelector(selectChannelId);
-  const channelName = "Youtube"; //useSelector(selectChannelName);
+  const user = useSelector(selectUser);
+  const channelId = useSelector(selectChannelId);
+  const channelName = useSelector(selectChannelName);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
+  const messagesEndRef = useRef(null);
+  const [userName, setUserName] = useState("Uday");
+  const [inputMessage, setInputMessage] = useState("");
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const getConversation = (channelId) => {
     if (channelId) {
@@ -30,18 +35,32 @@ function Chat() {
 
   useEffect(() => {
     getConversation(channelId);
+    const localUser = JSON.parse(localStorage.getItem("user"));
+    setUserName(localUser["name"]);
+    scrollToBottom();
   }, [channelId]);
 
-  const sendMessage = (e) => {
-    e.preventDefault();
+  const handleMessageValueChange = (event) => {
+    if (event === "") {
+      return;
+    }
+    setInputMessage(event.target.value);
+  };
 
-    axios.post(`/new/message?id=${channelId}`, {
-      messages: input,
-      timestamp: Date.now(),
-      user: "Uday", //user
-    });
+  const handleKeyPressed = (event) => {
+    if (event.key === "Enter") {
+      handleSendMessage();
+    }
+  };
 
-    setInput("");
+  const handleSendMessage = (message) => {
+    if (message.length > 0) {
+      sendDirectMessage({
+        receiverUserId: user.id,
+        content: message,
+      });
+      setInputMessage("");
+    }
   };
 
   return (
@@ -71,7 +90,7 @@ function Chat() {
             disabled={!channelId}
             className="chat__inputButton"
             type="submit"
-            onClick={sendMessage}
+            onClick={handleSendMessage}
           >
             Send Message
           </button>

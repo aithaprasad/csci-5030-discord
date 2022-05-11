@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   flex: 0.75;
-  background-color: #363a3f;
+  background-color: lightgray;
   height: 100vh;
 }
 
@@ -12,16 +12,16 @@
 }
 
 .chat__messages::-webkit-scrollbar {
-  display: none;
+  display: auto;
 }
 
 .chat__messages {
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  scrollbar-width: auto;
 }
 
 .chat__input {
-  color: lightgray;
+  color: gray;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,12 +33,12 @@
 }
 
 .chat__input > form > input {
-  padding: 15px;
+  padding: 12px;
   background: transparent;
   border: none;
   width: 100%;
   outline-width: 0;
-  color: white;
+  color: black;
   font-size: large;
 }
 
