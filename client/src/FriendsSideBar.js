@@ -18,7 +18,6 @@ const FriendsSideBar = () => {
   return (
     <MainContainer>
       <AddFriendButton />
-    {/*  <FriendsTitle title="Private Messages" />*/}
       <FriendsList />
       <FriendsTitle title="Invitations" />
       <PendingInvitationsList />
